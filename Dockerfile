@@ -60,4 +60,4 @@ ENV PATH="${WDIR}/TFaaS/src/Go:${PATH}"
 
 # run the service
 RUN mkdir models
-CMD ["tfaas",  "-config", "config.json"]
+CMD sudo chown -R tfaas:tfaas models && tfaas -config config.json
